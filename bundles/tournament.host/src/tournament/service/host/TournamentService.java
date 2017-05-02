@@ -26,7 +26,7 @@ import tournament.service.ITournamentService;
  *
  */
 @Component(enabled = true, immediate = true,
-    property = { "service.exported.interfaces=*", "service.exported.configs=ecf.jaxrs.jersey.server", "ecf.jaxrs.jersey.server.urlContext=http://localhost:8080", "ecf.jaxrs.jersey.server.alias=/tournament", "service.pid=com.bmstu.coursework.oomph.ds.host.TournamentService" })
+    property = { "service.exported.interfaces=*", "service.exported.configs=ecf.jaxrs.jersey.server", "ecf.jaxrs.jersey.server.urlContext=http://localhost:8080", "ecf.jaxrs.jersey.server.alias=/tournament", "service.pid=tournament.service.host.TournamentService" })
 public class TournamentService implements ITournamentService {
 
 	public static final int MAX_NUMBER_PLAYER = 100;
