@@ -3,6 +3,7 @@
  */
 package tournament.service.host;
 
+//import java.awt.PageAttributes.MediaType;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,6 +14,9 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Modified;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tournament.model.AbstractTournament;
 import tournament.model.Match;
@@ -27,6 +31,7 @@ import tournament.service.ITournamentService;
  */
 @Component(enabled = true, immediate = true,
     property = { "service.exported.interfaces=*", "service.exported.configs=ecf.jaxrs.jersey.server", "ecf.jaxrs.jersey.server.urlContext=http://localhost:8080", "ecf.jaxrs.jersey.server.alias=/tournament", "service.pid=tournament.service.host.TournamentService" })
+//@Path("/beautyblog")
 public class TournamentService implements ITournamentService {
 
 	public static final int MAX_NUMBER_PLAYER = 100;
@@ -53,9 +58,19 @@ public class TournamentService implements ITournamentService {
 	}
 
 	@Override
-	public void addPlayer(Player player) {
+	public void addPlayer(String player) {
+		ObjectMapper mapper = new ObjectMapper();
+		Player p = null;
+
+		try {
+			p = mapper.readValue(player, Player.class);
+		}
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if ((players.size() < MAX_NUMBER_PLAYER) && isRegistrationOpen && (player != null)) {
-			players.add(player);
+			players.add(p);
 		}
 	}
 
@@ -85,9 +100,22 @@ public class TournamentService implements ITournamentService {
 		return generatedMatchs;
 	}
 
+
 	@Override
-	public List<Player> getPlayers() {
-		return players;
+	public String getPlayers() {
+		ObjectMapper mapper = new ObjectMapper();
+		Player p = new Player();
+		String playersStr = null;
+
+		try {
+			playersStr = mapper.writeValueAsString(players);
+		}
+		catch (JsonProcessingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		return playersStr;
 	}
 
 	@Override

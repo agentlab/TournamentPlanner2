@@ -4,7 +4,6 @@
 package tournament.service;
 
 import java.util.Collection;
-import java.util.List;
 
 import tournament.model.AbstractTournament;
 import tournament.model.Match;
@@ -23,13 +22,13 @@ public interface ITournamentService {
 
 	AbstractTournament getManagedTournament();
 
-	void addPlayer(Player player);
+	void addPlayer(String player);
 
 	void removePlayer(Player player);
 
 	void setWinner(SetWinnerRequest setWinnerRequest);
 
-	List<Player> getPlayers();
+	String getPlayers();
 
 	Collection<Match> getMatchs();
 
