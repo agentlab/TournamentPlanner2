@@ -9,7 +9,12 @@
    <launcherArgs>
       <programArgs>-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console -debug -clean -configuration ./config -data ./data -user ./user
       </programArgs>
-      <vmArgs>-Xms40m -Xmx384m -Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.eclipse.equinox.http.jetty.http.port=8080 -Declipse.log.level=ALL -Dlogback.configurationFile=logback.xml
+      <vmArgs>-Xms40m  -Xmx384m 
+-Declipse.ignoreApp=true 
+-Dosgi.noShutdown=true 
+-Dorg.eclipse.equinox.http.jetty.http.port=8080 
+-Declipse.log.level=ALL 
+-Dlogback.configurationFile=logback.xml
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread
       </vmArgsMac>

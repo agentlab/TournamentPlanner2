@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="id1"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            thread="any">
+         <run
+               class="org.eclipse.fx.ui.di.DIApplication">
+            <parameter
+                  name="Tournament"
+                  value="tournament.client.MainApplication">
+            </parameter>
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="tournament.client.application"
+            name="Tournament">
+         <property
+               name="TournamentApp"
+               value="Tournament">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
