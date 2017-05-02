@@ -1,21 +1,21 @@
 /**
  *
  */
-package com.bmstu.coursework.oomph.model;
+package tournament.model;
 
 /**
  * @author Vilkova
  *
  */
 public class SetWinnerRequest {
-	private Player player;
+	private int idPlayer;
 	private Match match;
 
 	/**
-	 * @return the player
+	 * @return the player's id
 	 */
-	public Player getPlayer() {
-		return player;
+	public int getIdPlayer() {
+		return idPlayer;
 	}
 
 	/**

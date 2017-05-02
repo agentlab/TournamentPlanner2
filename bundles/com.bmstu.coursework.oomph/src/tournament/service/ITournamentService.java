@@ -1,15 +1,15 @@
 /**
  *
  */
-package com.bmstu.coursework.oomph;
+package tournament.service;
 
 import java.util.Collection;
 import java.util.List;
 
-import com.bmstu.coursework.oomph.model.AbstractTournament;
-import com.bmstu.coursework.oomph.model.Match;
-import com.bmstu.coursework.oomph.model.Player;
-import com.bmstu.coursework.oomph.model.SetWinnerRequest;
+import tournament.model.AbstractTournament;
+import tournament.model.Match;
+import tournament.model.Player;
+import tournament.model.SetWinnerRequest;
 
 /**
  * @author Vilkova
@@ -32,5 +32,12 @@ public interface ITournamentService {
 	List<Player> getPlayers();
 
 	Collection<Match> getMatchs();
+
+	/**
+	 * TODO JavaDoc
+	 *
+	 * @return
+	 */
+	Collection<Match> generateMatchs();
 
 }

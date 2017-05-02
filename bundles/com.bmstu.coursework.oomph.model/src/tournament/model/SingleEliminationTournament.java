@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.bmstu.coursework.oomph.model;
+package tournament.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +20,7 @@ public class SingleEliminationTournament
 //	private Map<Player, Integer> playerToRatingMap;
 	private Collection<Match> currentRoundMatchs;
 	private Player extraPlayer = null;
+	private int id = 0;
 
 	public SingleEliminationTournament(List<Player> players) {
 		super(players);
@@ -74,17 +75,17 @@ public class SingleEliminationTournament
 		}
 	}
 
-	private void removeLosers(List<Player> players, Collection<Match> currentRoundMatchs) {
-		currentRoundMatchs.stream().forEach(match -> {
-			players.remove(match.getLoser());
-		});
-	}
-
 	private List<Player> generateRating() {
 		List<Player> rating = new ArrayList<>(initialPlayers);
 		Collections.sort(rating, new PlayersComparator());
 
 		return rating;
+	}
+
+	private void removeLosers(List<Player> players, Collection<Match> currentRoundMatchs) {
+		currentRoundMatchs.stream().forEach(match -> {
+			players.remove(match.getLoser());
+		});
 	}
 
 	private boolean roundFinished(Collection<Match> currentRoundMatchs) {

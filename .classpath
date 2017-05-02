@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="bundles/com.bmstu.coursework.oomph.ds.host/src"/>
+	<classpathentry kind="src" path="bundles/com.bmstu.coursework.oomph.model/src"/>
+	<classpathentry kind="src" path="bundles/com.bmstu.coursework.oomph/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bundles/com.bmstu.coursework.oomph/bin"/>
+</classpath>

@@ -1,9 +1,9 @@
 /**
  *
  */
-package com.bmstu.coursework.oomph.model;
+package tournament.model;
 
-import java.util.Collection;
+//import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -15,10 +15,10 @@ public class Match {
 	public static final int POINT_WINNER = 2;
 	public static final int POINT_LOSER = 0;
 	//public static final int POINT_DRAW = 1;
-	private static int id;
+	private int id;
 	private static int nextId = 1;
 	private List<Player> matchPlayers;
-	private Collection<Match> matchs;
+	//private Collection<Match> matchs;
 	private Player winner = null;
 	private Player loser = null;
 

@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.bmstu.coursework.oomph.ds.host;
+package tournament.service.host;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,12 +14,12 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Modified;
 
-import com.bmstu.coursework.oomph.ITournamentService;
-import com.bmstu.coursework.oomph.model.AbstractTournament;
-import com.bmstu.coursework.oomph.model.Match;
-import com.bmstu.coursework.oomph.model.Player;
-import com.bmstu.coursework.oomph.model.SetWinnerRequest;
-import com.bmstu.coursework.oomph.model.SingleEliminationTournament;
+import tournament.model.AbstractTournament;
+import tournament.model.Match;
+import tournament.model.Player;
+import tournament.model.SetWinnerRequest;
+import tournament.model.SingleEliminationTournament;
+import tournament.service.ITournamentService;
 
 /**
  * @author Vilkova
@@ -33,6 +33,7 @@ public class TournamentService implements ITournamentService {
 	private AbstractTournament tournament;
 	private List<Player> players = new ArrayList<>();
 	private boolean isRegistrationOpen;
+	private Collection<Match> matchsHistory = new ArrayList<>();
 
 	@Override
 	public void openRegistration() {
@@ -67,7 +68,21 @@ public class TournamentService implements ITournamentService {
 
 	@Override
 	public void setWinner(SetWinnerRequest setWinnerRequest) {
-		setWinnerRequest.getMatch().setWinner(setWinnerRequest.getPlayer());
+		Player playerWinner = null;
+		for (int i = 0; i < players.size(); i++) {
+			if (setWinnerRequest.getIdPlayer() == players.get(i).getId()) {
+				playerWinner = players.get(i);
+				break;
+			}
+		}
+		setWinnerRequest.getMatch().setWinner(playerWinner);
+	}
+
+	@Override
+	public Collection<Match> generateMatchs() {
+		Collection<Match> generatedMatchs = getManagedTournament().generateMatchs();
+		matchsHistory.addAll(generatedMatchs);
+		return generatedMatchs;
 	}
 
 	@Override
@@ -77,7 +92,7 @@ public class TournamentService implements ITournamentService {
 
 	@Override
 	public Collection<Match> getMatchs() {
-		return getManagedTournament().generateMatchs();
+		return matchsHistory;
 	}
 
 	@Activate

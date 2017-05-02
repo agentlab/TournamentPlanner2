@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.bmstu.coursework.oomph.model;
+package tournament.model;
 
 import java.util.ArrayList;
 import java.util.Collection;

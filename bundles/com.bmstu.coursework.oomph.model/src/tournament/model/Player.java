@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.bmstu.coursework.oomph.model;
+package tournament.model;
 
 /**
  * @author Vilkova
