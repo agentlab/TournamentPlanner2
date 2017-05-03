@@ -9,15 +9,15 @@ package tournament.model;
  */
 public class Player {
 	private int id;
-	private static int nextId = 1;
+	//private static int nextId = 1;
 	private String name;
 	private int points;
 
-	public Player(String name) {
+	/*public Player(String name) {
 		id = nextId;
 		this.name = name;
 		nextId++;
-	}
+	}*/
 
 	/**
 	 *
@@ -46,12 +46,12 @@ public class Player {
 		this.points += points;
 	}
 
-	@Override
+	/*@Override
 	public String toString() {
 		return name;
-	}
+	}*/
 
-	@Override
+	/*@Override
 	public boolean equals(Object obj) {
 		if (obj == null) {
 			return false;
@@ -61,10 +61,24 @@ public class Player {
 		}
 		if (obj instanceof Player) {
 			Player other = (Player)obj;
-
+	
 			return (other.getId() == this.getId());
 		}
-
+	
 		return false;
+	}*/
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
 }

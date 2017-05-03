@@ -8,5 +8,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8,
  CDC-1.1/Foundation-1.1
 Bundle-ActivationPolicy: lazy
 Export-Package: tournament.service;version="1.0.0"
-Import-Package: org.eclipse.ecf.remoteservice,
- tournament.model
+Import-Package: tournament.model

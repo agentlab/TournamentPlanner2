@@ -3,7 +3,6 @@
  */
 package tournament.service.host;
 
-//import java.awt.PageAttributes.MediaType;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,9 +13,6 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Modified;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tournament.model.AbstractTournament;
 import tournament.model.Match;
@@ -59,9 +55,9 @@ public class TournamentService implements ITournamentService {
 
 	@Override
 	public void addPlayer(String player) {
-		ObjectMapper mapper = new ObjectMapper();
+		/*ObjectMapper mapper = new ObjectMapper();
 		Player p = null;
-
+		
 		try {
 			p = mapper.readValue(player, Player.class);
 		}
@@ -71,7 +67,7 @@ public class TournamentService implements ITournamentService {
 		}
 		if ((players.size() < MAX_NUMBER_PLAYER) && isRegistrationOpen && (player != null)) {
 			players.add(p);
-		}
+		}*/
 	}
 
 	@Override
@@ -103,17 +99,17 @@ public class TournamentService implements ITournamentService {
 
 	@Override
 	public String getPlayers() {
-		ObjectMapper mapper = new ObjectMapper();
-		Player p = new Player();
+		/*ObjectMapper mapper = new ObjectMapper();
+		Player p = new Player();*/
 		String playersStr = null;
 
-		try {
+		/*try {
 			playersStr = mapper.writeValueAsString(players);
 		}
 		catch (JsonProcessingException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}
+		}*/
 
 		return playersStr;
 	}

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Tournament" uid="tournament.product" id="tournament.product" application="tournament.client.id1" version="1.0.0.0" useFeatures="false" includeLaunchers="true">
+<product name="Tournament" uid="tournament.product" id="tournament.product" version="1.0.0.0" useFeatures="false" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
 
    <launcherArgs>
-      <programArgs>-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console -debug -clean
+      <programArgs>-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console -debug -clean -configuration ./config -data ./data -user ./user
       </programArgs>
-      <vmArgs>-Xms40m  -Xmx384m 
--Declipse.ignoreApp=true 
--Dosgi.noShutdown=true 
--Dorg.eclipse.equinox.http.jetty.http.port=8080 
--Declipse.log.level=ALL 
+      <vmArgs>-Xms40m  -Xmx384m
+-Declipse.ignoreApp=true
+-Dosgi.noShutdown=true
+-Dorg.eclipse.equinox.http.jetty.http.port=8080
+-Declipse.log.level=ALL
 -Dlogback.configurationFile=logback.xml
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread
@@ -44,10 +44,8 @@
       <plugin id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider"/>
       <plugin id="com.fasterxml.jackson.module.jackson-module-jaxb-annotations"/>
       <plugin id="com.google.guava"/>
-      <plugin id="com.google.jsr305"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="javassist"/>
-      <plugin id="javax.activation"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
       <plugin id="javax.persistence"/>
@@ -56,21 +54,13 @@
       <plugin id="javax.validation.api"/>
       <plugin id="javax.ws.rs"/>
       <plugin id="javax.xml"/>
-      <plugin id="javax.xml.jre"/>
       <plugin id="org.aopalliance"/>
-      <plugin id="org.apache.commons.lang"/>
       <plugin id="org.apache.felix.gogo.command"/>
       <plugin id="org.apache.felix.gogo.runtime"/>
       <plugin id="org.apache.felix.gogo.shell"/>
       <plugin id="org.eclipse.core.contenttype"/>
-      <plugin id="org.eclipse.core.databinding.observable"/>
-      <plugin id="org.eclipse.core.databinding.property"/>
       <plugin id="org.eclipse.core.jobs"/>
       <plugin id="org.eclipse.core.runtime"/>
-      <plugin id="org.eclipse.e4.core.contexts"/>
-      <plugin id="org.eclipse.e4.core.di"/>
-      <plugin id="org.eclipse.e4.core.di.annotations"/>
-      <plugin id="org.eclipse.e4.core.services"/>
       <plugin id="org.eclipse.ecf"/>
       <plugin id="org.eclipse.ecf.discovery"/>
       <plugin id="org.eclipse.ecf.identity"/>
@@ -80,6 +70,7 @@
       <plugin id="org.eclipse.ecf.provider.jaxrs"/>
       <plugin id="org.eclipse.ecf.provider.jaxrs.server"/>
       <plugin id="org.eclipse.ecf.provider.jersey.server"/>
+      <plugin id="org.eclipse.ecf.provider.jmdns"/>
       <plugin id="org.eclipse.ecf.remoteservice"/>
       <plugin id="org.eclipse.ecf.remoteservice.asyncproxy"/>
       <plugin id="org.eclipse.ecf.ssl" fragment="true"/>
@@ -116,14 +107,6 @@
       <plugin id="org.eclipse.equinox.useradmin"/>
       <plugin id="org.eclipse.equinox.util"/>
       <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
-      <plugin id="org.eclipse.fx.core"/>
-      <plugin id="org.eclipse.fx.core.databinding"/>
-      <plugin id="org.eclipse.fx.core.di"/>
-      <plugin id="org.eclipse.fx.core.fxml"/>
-      <plugin id="org.eclipse.fx.osgi" fragment="true"/>
-      <plugin id="org.eclipse.fx.osgi.util"/>
-      <plugin id="org.eclipse.fx.ui.di"/>
-      <plugin id="org.eclipse.jdt.annotation"/>
       <plugin id="org.eclipse.jetty.http"/>
       <plugin id="org.eclipse.jetty.io"/>
       <plugin id="org.eclipse.jetty.security"/>
@@ -147,13 +130,14 @@
       <plugin id="org.glassfish.jersey.core.jersey-server"/>
       <plugin id="org.glassfish.jersey.ext.jersey-entity-filtering"/>
       <plugin id="org.glassfish.jersey.media.jersey-media-json-jackson"/>
+      <plugin id="org.json"/>
       <plugin id="org.objectweb.asm"/>
       <plugin id="org.slf4j.api"/>
+      <plugin id="org.slf4j.ext"/>
       <plugin id="org.slf4j.jcl"/>
       <plugin id="org.slf4j.jul"/>
       <plugin id="org.slf4j.log4j"/>
       <plugin id="org.tukaani.xz"/>
-      <plugin id="tournament.client"/>
       <plugin id="tournament.model"/>
       <plugin id="tournament.service"/>
       <plugin id="tournament.service.host"/>
@@ -162,14 +146,12 @@
    <configurations>
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.ecf.osgi.services.distribution" autoStart="true" startLevel="5" />
-      <plugin id="org.eclipse.ecf.remoteservice" autoStart="true" startLevel="5" />
+      <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin" autoStart="true" startLevel="5" />
       <plugin id="org.eclipse.equinox.app" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="1" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="1" />
-      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.http.jetty" autoStart="true" startLevel="4" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
-      <plugin id="org.eclipse.osgi" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.osgi" autoStart="true" startLevel="-1" />
       <property name="org.eclipse.equinox.simpleconfigurator.configUrl" value="file\:./configuration/org.eclipse.equinox.simpleconfigurator/bundles.info" />
       <property name="osgi.configuration.cascaded" value="false" />
       <property name="osgi.framework" value="file\:./org.eclipse.osgi_3.10.101.v20150820-1432.jar" />
