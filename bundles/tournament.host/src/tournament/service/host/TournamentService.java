@@ -27,7 +27,6 @@ import tournament.service.ITournamentService;
  */
 @Component(enabled = true, immediate = true,
     property = { "service.exported.interfaces=*", "service.exported.configs=ecf.jaxrs.jersey.server", "ecf.jaxrs.jersey.server.urlContext=http://localhost:8080", "ecf.jaxrs.jersey.server.alias=/tournament", "service.pid=tournament.service.host.TournamentService" })
-//@Path("/beautyblog")
 public class TournamentService implements ITournamentService {
 
 	public static final int MAX_NUMBER_PLAYER = 100;
@@ -54,20 +53,10 @@ public class TournamentService implements ITournamentService {
 	}
 
 	@Override
-	public void addPlayer(String player) {
-		/*ObjectMapper mapper = new ObjectMapper();
-		Player p = null;
-		
-		try {
-			p = mapper.readValue(player, Player.class);
-		}
-		catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void addPlayer(Player player) {
 		if ((players.size() < MAX_NUMBER_PLAYER) && isRegistrationOpen && (player != null)) {
-			players.add(p);
-		}*/
+			players.add(player);
+		}
 	}
 
 	@Override
@@ -98,20 +87,8 @@ public class TournamentService implements ITournamentService {
 
 
 	@Override
-	public String getPlayers() {
-		/*ObjectMapper mapper = new ObjectMapper();
-		Player p = new Player();*/
-		String playersStr = null;
-
-		/*try {
-			playersStr = mapper.writeValueAsString(players);
-		}
-		catch (JsonProcessingException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}*/
-
-		return playersStr;
+	public List<Player> getPlayers() {
+		return players;
 	}
 
 	@Override

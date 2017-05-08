@@ -1,0 +1,15 @@
+package tournament.client
+
+import javafx.scene.layout.AnchorPane
+import javafx.scene.control.Button
+import tournament.client.FXController
+
+component Registration controlledby FXController{
+	AnchorPane {
+		center: Button id button {
+			text : "Open registration!",
+			onAction : controllermethod keyPress
+		}
+	//	bottom : include ru.agentlab.oomph.launcher.SubGraph
+	}
+}
