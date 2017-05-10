@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="activate" name="tournament.client">
-   <reference bind="bindService" cardinality="1..1" interface="tournament.service.ITournamentService" name="Service" policy="dynamic" unbind="unbindService"/>
-   <implementation class="tournament.client.TournamentClient"/>
-</scr:component>

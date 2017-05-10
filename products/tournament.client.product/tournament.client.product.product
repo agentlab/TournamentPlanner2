@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Tournament Client" uid="tournament.client.product" id="tournament.client.product" version="1.0.0.0" useFeatures="false" includeLaunchers="false">
+<product name="Tournament Client" uid="tournament.client.product" id="tournament.client.product" application="tournament.client.application" version="1.0.0.0" useFeatures="false" includeLaunchers="false">
 
    <configIni use="default">
    </configIni>
@@ -9,7 +9,7 @@
    <launcherArgs>
       <programArgs>-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console -debug -clean -configuration ./config -data ./data -user ./user
       </programArgs>
-      <vmArgs>-Xms40m -Xmx384m -Declipse.ignoreApp=true -Dosgi.noShutdown=true -Declipse.log.level=ALL -Dlogback.configurationFile=logback.xml -Dorg.eclipse.equinox.http.jetty.autostart=false
+      <vmArgs>-Dosgi.framework.extensions=org.eclipse.fx.osgi -Declipse.log.level=ALL -Dlogback.configurationFile=logback.xml -Dorg.eclipse.equinox.http.jetty.autostart=false
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
@@ -29,23 +29,14 @@
       <plugin id="ch.qos.logback.classic"/>
       <plugin id="ch.qos.logback.core"/>
       <plugin id="ch.qos.logback.slf4j" fragment="true"/>
-      <plugin id="com.fasterxml.jackson.core.jackson-annotations"/>
-      <plugin id="com.fasterxml.jackson.core.jackson-core"/>
-      <plugin id="com.fasterxml.jackson.core.jackson-databind"/>
-      <plugin id="com.fasterxml.jackson.datatype.jackson-datatype-guava"/>
-      <plugin id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-base"/>
-      <plugin id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider"/>
-      <plugin id="com.fasterxml.jackson.module.jackson-module-jaxb-annotations"/>
       <plugin id="com.google.guava"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="javassist"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
       <plugin id="javax.persistence"/>
-      <plugin id="javax.servlet"/>
       <plugin id="javax.validation"/>
       <plugin id="javax.validation.api"/>
-      <plugin id="javax.ws.rs"/>
       <plugin id="javax.xml"/>
       <plugin id="javax.xml.jre"/>
       <plugin id="org.aopalliance"/>
@@ -54,25 +45,15 @@
       <plugin id="org.apache.felix.gogo.runtime"/>
       <plugin id="org.apache.felix.gogo.shell"/>
       <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.databinding"/>
       <plugin id="org.eclipse.core.databinding.observable"/>
+      <plugin id="org.eclipse.core.databinding.property"/>
       <plugin id="org.eclipse.core.jobs"/>
       <plugin id="org.eclipse.core.runtime"/>
       <plugin id="org.eclipse.e4.core.contexts"/>
       <plugin id="org.eclipse.e4.core.di"/>
       <plugin id="org.eclipse.e4.core.di.annotations"/>
-      <plugin id="org.eclipse.ecf"/>
-      <plugin id="org.eclipse.ecf.discovery"/>
-      <plugin id="org.eclipse.ecf.identity"/>
-      <plugin id="org.eclipse.ecf.osgi.services.distribution"/>
-      <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin"/>
-      <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin.proxy"/>
-      <plugin id="org.eclipse.ecf.provider.jaxrs"/>
-      <plugin id="org.eclipse.ecf.provider.jaxrs.client"/>
-      <plugin id="org.eclipse.ecf.provider.jersey.client"/>
-      <plugin id="org.eclipse.ecf.provider.jmdns"/>
-      <plugin id="org.eclipse.ecf.remoteservice"/>
-      <plugin id="org.eclipse.ecf.remoteservice.asyncproxy"/>
-      <plugin id="org.eclipse.ecf.ssl" fragment="true"/>
+      <plugin id="org.eclipse.e4.core.services"/>
       <plugin id="org.eclipse.equinox.app"/>
       <plugin id="org.eclipse.equinox.cm"/>
       <plugin id="org.eclipse.equinox.common"/>
@@ -80,8 +61,6 @@
       <plugin id="org.eclipse.equinox.console"/>
       <plugin id="org.eclipse.equinox.ds"/>
       <plugin id="org.eclipse.equinox.event"/>
-      <plugin id="org.eclipse.equinox.http.jetty"/>
-      <plugin id="org.eclipse.equinox.http.servlet"/>
       <plugin id="org.eclipse.equinox.launcher"/>
       <plugin id="org.eclipse.equinox.launcher.cocoa.macosx.x86_64" fragment="true"/>
       <plugin id="org.eclipse.equinox.launcher.gtk.aix.ppc" fragment="true"/>
@@ -103,40 +82,27 @@
       <plugin id="org.eclipse.equinox.registry"/>
       <plugin id="org.eclipse.equinox.simpleconfigurator"/>
       <plugin id="org.eclipse.equinox.transforms.hook" fragment="true"/>
-      <plugin id="org.eclipse.equinox.useradmin"/>
       <plugin id="org.eclipse.equinox.util"/>
       <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
       <plugin id="org.eclipse.fx.core"/>
+      <plugin id="org.eclipse.fx.core.databinding"/>
       <plugin id="org.eclipse.fx.core.di"/>
+      <plugin id="org.eclipse.fx.core.di.context"/>
       <plugin id="org.eclipse.fx.core.fxml"/>
+      <plugin id="org.eclipse.fx.core.slf4j"/>
+      <plugin id="org.eclipse.fx.javafx"/>
       <plugin id="org.eclipse.fx.osgi" fragment="true"/>
       <plugin id="org.eclipse.fx.osgi.util"/>
+      <plugin id="org.eclipse.fx.ui.controls"/>
+      <plugin id="org.eclipse.fx.ui.databinding"/>
       <plugin id="org.eclipse.fx.ui.di"/>
-      <plugin id="org.eclipse.jetty.http"/>
-      <plugin id="org.eclipse.jetty.io"/>
-      <plugin id="org.eclipse.jetty.security"/>
-      <plugin id="org.eclipse.jetty.server"/>
-      <plugin id="org.eclipse.jetty.servlet"/>
-      <plugin id="org.eclipse.jetty.util"/>
+      <plugin id="org.eclipse.fx.ui.panes"/>
+      <plugin id="org.eclipse.fx.ui.services"/>
+      <plugin id="org.eclipse.fx.ui.theme"/>
       <plugin id="org.eclipse.osgi"/>
       <plugin id="org.eclipse.osgi.compatibility.state" fragment="true"/>
       <plugin id="org.eclipse.osgi.services"/>
-      <plugin id="org.eclipse.osgi.services.remoteserviceadmin"/>
       <plugin id="org.eclipse.osgi.util"/>
-      <plugin id="org.glassfish.hk2.api"/>
-      <plugin id="org.glassfish.hk2.locator"/>
-      <plugin id="org.glassfish.hk2.osgi-resource-locator"/>
-      <plugin id="org.glassfish.hk2.utils"/>
-      <plugin id="org.glassfish.jersey.bundles.repackaged.jersey-guava"/>
-      <plugin id="org.glassfish.jersey.containers.jersey-container-servlet"/>
-      <plugin id="org.glassfish.jersey.containers.jersey-container-servlet-core"/>
-      <plugin id="org.glassfish.jersey.core.jersey-client"/>
-      <plugin id="org.glassfish.jersey.core.jersey-common"/>
-      <plugin id="org.glassfish.jersey.core.jersey-server"/>
-      <plugin id="org.glassfish.jersey.ext.jersey-entity-filtering"/>
-      <plugin id="org.glassfish.jersey.media.jersey-media-json-jackson"/>
-      <plugin id="org.json"/>
-      <plugin id="org.objectweb.asm"/>
       <plugin id="org.slf4j.api"/>
       <plugin id="org.slf4j.ext"/>
       <plugin id="org.slf4j.jcl"/>
@@ -146,21 +112,15 @@
       <plugin id="tournament.client"/>
       <plugin id="tournament.model"/>
       <plugin id="tournament.service"/>
+      <plugin id="tournament.service.host"/>
    </plugins>
 
    <configurations>
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.ecf" autoStart="true" startLevel="3" />
-      <plugin id="org.eclipse.ecf.osgi.services.distribution" autoStart="true" startLevel="5" />
-      <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin" autoStart="true" startLevel="5" />
-      <plugin id="org.eclipse.equinox.app" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
-      <plugin id="org.eclipse.osgi" autoStart="true" startLevel="-1" />
-      <property name="org.eclipse.equinox.simpleconfigurator.configUrl" value="file\:./configuration/org.eclipse.equinox.simpleconfigurator/bundles.info" />
-      <property name="osgi.configuration.cascaded" value="false" />
-      <property name="osgi.framework" value="file\:./org.eclipse.osgi_3.10.101.v20150820-1432.jar" />
    </configurations>
 
 </product>

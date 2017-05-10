@@ -4,17 +4,20 @@
 package tournament.client;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import tournament.service.ITournamentService;
 /**
  * @author Vilkova
  *
  */
 public class FXController {
-	private PrintService service;
+	@Inject
+	private ITournamentService service;
 
 	@FXML
 	Button button;
@@ -31,9 +34,8 @@ public class FXController {
 
 	@FXML
 	void keyPress() {
-		service.print("Registration was opened!");
 //		TournamentClient.getInstance().getTournamentService().openRegistration();
-		TournamentClient.getInstance().openRegistration();
+		service.openRegistration();
 	}
 }
 

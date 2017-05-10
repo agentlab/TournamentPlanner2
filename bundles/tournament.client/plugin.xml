@@ -2,15 +2,30 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            thread="any">
+         <run
+               class="org.eclipse.fx.ui.di.DIApplication">
+               <parameter name="mainClass" value="tournament.client.MainApplication" />
+         </run>
+      </application>
+   </extension>
+   <extension
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            application=""
+            application="tournament.client.application"
             name="Tournament Client">
              <property
                name="Tournamentapp"
                value="Tournament Client">
          </property>
+             <property
+                   name="appName"
+                   value="Tournament Client">
+             </property>
       </product>
    </extension>
 

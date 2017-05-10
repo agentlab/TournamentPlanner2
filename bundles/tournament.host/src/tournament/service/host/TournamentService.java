@@ -99,7 +99,7 @@ public class TournamentService implements ITournamentService {
 	@Activate
 	public void activate(ComponentContext context) throws IOException {
 		//tournament = new ArrayList<>();
-		System.out.println("TournamentManager started");
+		System.out.println("TournamentManager started"); //$NON-NLS-1$
 	}
 
 	@Deactivate
