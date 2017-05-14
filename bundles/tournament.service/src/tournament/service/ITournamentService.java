@@ -31,6 +31,8 @@ public interface ITournamentService {
 
 	List<Player> getPlayers();
 
+	List<String> getNamePlayers();
+
 	Collection<Match> getMatchs();
 
 	/**

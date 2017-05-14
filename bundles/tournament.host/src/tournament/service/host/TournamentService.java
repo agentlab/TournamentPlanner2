@@ -92,6 +92,15 @@ public class TournamentService implements ITournamentService {
 	}
 
 	@Override
+	public List<String> getNamePlayers() {
+		List<String> listPlayers = new ArrayList<>();
+		for (int i = 0; i < players.size(); i++) {
+			listPlayers.add(players.get(i).getName());
+		}
+		return listPlayers;
+	}
+
+	@Override
 	public Collection<Match> getMatchs() {
 		return matchsHistory;
 	}

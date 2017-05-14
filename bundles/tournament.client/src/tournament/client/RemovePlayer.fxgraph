@@ -1,0 +1,22 @@
+package tournament.client
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import javafx.collections.*
+import tournament.client.FXRemovePlayerController
+
+component RemovePlayer controlledby FXRemovePlayerController{
+	VBox {
+		children : [
+			ChoiceBox<String> id playerBox,
+			Button id selectPlayerButton{
+				text : "Select Player",
+				onAction : controllermethod keyPressSelect
+				},
+			Button id removePlayerButton{
+				text : "Remove Player",
+				onAction : controllermethod keyPress
+				}
+			]
+		}
+	}

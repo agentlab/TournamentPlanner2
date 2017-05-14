@@ -6,6 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: org.eclipse.e4.core.contexts,
  org.osgi.service.component.annotations;version="[1.2.0,2.0.0)",
+ tournament.model,
  tournament.service;version="[1.0.0,2.0.0)"
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.fx.core;bundle-version="3.0.0",

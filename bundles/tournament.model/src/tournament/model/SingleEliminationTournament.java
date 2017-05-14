@@ -20,7 +20,6 @@ public class SingleEliminationTournament
 //	private Map<Player, Integer> playerToRatingMap;
 	private Collection<Match> currentRoundMatchs;
 	private Player extraPlayer = null;
-	private int id = 0;
 
 	public SingleEliminationTournament(List<Player> players) {
 		super(players);

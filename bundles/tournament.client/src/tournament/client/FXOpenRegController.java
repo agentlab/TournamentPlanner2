@@ -15,26 +15,25 @@ import tournament.service.ITournamentService;
  * @author Vilkova
  *
  */
-public class FXController {
+public class FXOpenRegController {
 	@Inject
 	private ITournamentService service;
 
 	@FXML
-	Button button;
+	Button openRegButton;
 
 	@PostConstruct
 	void created(IEclipseContext context) {
-		System.err.println("Parent post construction");
+		System.err.println("Parent post construction"); //$NON-NLS-1$
 	}
 
 	@FXML
 	void initialize() {
-		System.err.println("Parent controller");
+		System.err.println("Parent controller"); //$NON-NLS-1$
 	}
 
 	@FXML
 	void keyPress() {
-//		TournamentClient.getInstance().getTournamentService().openRegistration();
 		service.openRegistration();
 	}
 }

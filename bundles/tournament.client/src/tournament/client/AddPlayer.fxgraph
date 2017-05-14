@@ -1,0 +1,30 @@
+package tournament.client
+
+import javafx.scene.layout.*
+import javafx.scene.control.Button
+import javafx.scene.control.Label
+import javafx.scene.control.TextField
+import tournament.client.FXAddPlayerController
+
+component AddPlayer controlledby FXAddPlayerController{
+	VBox {
+		children : [
+			Button id addPlayerButton {
+				text : "Add Player",
+				onAction : controllermethod keyPress
+				},
+			Label {
+				text:"Id"
+				},
+			TextField id idPlayer,
+			Label {
+				text:"Name"
+				},
+			TextField id namePlayer,
+			Label {
+				text:"Points"
+				},
+			TextField id pointsPlayer
+			]
+		}
+	}
