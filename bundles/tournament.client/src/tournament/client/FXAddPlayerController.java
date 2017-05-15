@@ -1,10 +1,12 @@
 package tournament.client;
 
+
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -27,6 +29,9 @@ public class FXAddPlayerController {
 	@FXML
 	TextField pointsPlayer;
 
+	@FXML
+	Button deletePlayerButton;
+
 	@PostConstruct
 	void created(IEclipseContext context) {
 		System.err.println("Add Player post construction"); //$NON-NLS-1$
@@ -38,11 +43,28 @@ public class FXAddPlayerController {
 	}
 
 	@FXML
-	void keyPress() {
+	void keyPress(ActionEvent event) {
 		Player player = new Player();
 		player.setId(Integer.parseInt(idPlayer.getText()));
 		player.setPoints(Integer.parseInt(pointsPlayer.getText()));
 		player.setName(namePlayer.getText());
 		service.addPlayer(player);
 	}
+
+//	@FXML
+//	public void deletekeyPress(ActionEvent event) {
+//		Parent root = null;
+//		try {
+//			root = FXMLLoader.load(getClass().getResource("RemovePlayer.fxml")); //$NON-NLS-1$
+//			Scene scene = new Scene(root);
+//			Stage nStage = new Stage();
+//			nStage.setScene(scene);
+//			nStage.setMaximized(false);
+//			nStage.setTitle("RemovePlayer"); //$NON-NLS-1$
+//			nStage.show();
+//		}
+//		catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//	}
 }

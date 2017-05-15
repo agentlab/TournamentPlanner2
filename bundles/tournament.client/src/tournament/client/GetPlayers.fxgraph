@@ -1,0 +1,30 @@
+package tournament.client
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import javafx.collections.*
+import tournament.client.FXGetPlayersController
+
+component GetPlayers controlledby FXGetPlayersController{
+	VBox {
+		children : [
+			Button id getPlayersButton{
+				text : "Get Players",
+				onAction : controllermethod keyPress
+				},
+			TableView id tablePlayers{
+				columns:[
+					TableColumn id idColumn{
+						text: "Id"
+					},
+					TableColumn id nameColumn{
+						text: "Name"
+					},
+					TableColumn id pointsColumn{
+						text: "Points"
+					}
+					]
+				}
+			]
+		}
+	}

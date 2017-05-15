@@ -10,7 +10,8 @@ component OpenRegistration controlledby FXOpenRegController{
 			text : "Open registration!",
 			onAction : controllermethod keyPress
 		},
-		center: include tournament.client.AddPlayer,
-		bottom: include tournament.client.RemovePlayer
+		left: include tournament.client.AddPlayer,
+		center: include tournament.client.RemovePlayer,
+		right: include tournament.client.GetPlayers
 	}
 }

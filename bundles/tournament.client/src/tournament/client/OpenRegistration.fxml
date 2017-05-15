@@ -12,10 +12,13 @@
 	<top>
 		<Button fx:id="openRegButton" text="Open registration!" onAction="#keyPress"/> 
 	</top>
-	<center>
+	<left>
 		<fx:include source="/tournament/client/AddPlayer.fxml" />
-	</center>
-	<bottom>
+	</left>
+	<center>
 		<fx:include source="/tournament/client/RemovePlayer.fxml" />
-	</bottom>
+	</center>
+	<right>
+		<fx:include source="/tournament/client/GetPlayers.fxml" />
+	</right>
 </BorderPane>
