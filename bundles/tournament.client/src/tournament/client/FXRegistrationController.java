@@ -15,12 +15,15 @@ import tournament.service.ITournamentService;
  * @author Vilkova
  *
  */
-public class FXOpenRegController {
+public class FXRegistrationController {
 	@Inject
 	private ITournamentService service;
 
 	@FXML
 	Button openRegButton;
+
+	@FXML
+	Button closeRegButton;
 
 	@PostConstruct
 	void created(IEclipseContext context) {
@@ -35,6 +38,11 @@ public class FXOpenRegController {
 	@FXML
 	void keyPress() {
 		service.openRegistration();
+	}
+
+	@FXML
+	public void keyClosePress() {
+		service.closeRegistration();
 	}
 }
 

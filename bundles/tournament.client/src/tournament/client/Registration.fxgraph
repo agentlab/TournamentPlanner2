@@ -2,13 +2,19 @@ package tournament.client
 
 import javafx.scene.layout.BorderPane
 import javafx.scene.control.Button
-import tournament.client.FXOpenRegController
+import tournament.client.FXRegistrationController
 
-component OpenRegistration controlledby FXOpenRegController{
+component Registration controlledby FXRegistrationController{
 	BorderPane {
-		top: Button id openRegButton {
+		top:
+			Button id openRegButton {
 			text : "Open registration!",
 			onAction : controllermethod keyPress
+		},
+		bottom:
+			Button id closeRegButton {
+			text : "Close registration!",
+			onAction : controllermethod keyClosePress
 		},
 		left: include tournament.client.AddPlayer,
 		center: include tournament.client.RemovePlayer,

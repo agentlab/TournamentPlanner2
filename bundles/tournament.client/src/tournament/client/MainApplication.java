@@ -17,7 +17,7 @@ public class MainApplication {
 
 	@PostConstruct
 	void run(IApplicationContext applicationContext, javafx.application.Application jfxApplication, Stage primaryStage, @LocalInstance FXMLLoader loader) {
-		URL resource = getClass().getResource("OpenRegistration.fxml"); //$NON-NLS-1$
+		URL resource = getClass().getResource("Registration.fxml"); //$NON-NLS-1$
         loader.setLocation(resource);
 		try {
 			BorderPane pane = loader.load();
