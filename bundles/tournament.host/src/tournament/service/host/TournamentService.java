@@ -15,11 +15,11 @@ import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Modified;
 
 import tournament.model.AbstractTournament;
+import tournament.model.ITournamentService;
 import tournament.model.Match;
 import tournament.model.Player;
 import tournament.model.SetWinnerRequest;
 import tournament.model.SingleEliminationTournament;
-import tournament.service.ITournamentService;
 
 /**
  * @author Vilkova
@@ -95,6 +95,11 @@ public class TournamentService implements ITournamentService {
 
 
 	@Override
+	public void removeLosers(){
+		getManagedTournament().removeLosers();
+	}
+
+	@Override
 	public List<Player> getPlayers() {
 		return players;
 	}
@@ -127,6 +132,11 @@ public class TournamentService implements ITournamentService {
 	@Modified
 	public void modify() {
 		System.out.println("TournamentManager modified"); //$NON-NLS-1$
+	}
+
+	@Override
+	public Player getRating() {
+		return getManagedTournament().getRating().get(0);
 	}
 
 }

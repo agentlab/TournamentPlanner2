@@ -10,8 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import tournament.model.ITournamentService;
 import tournament.model.Player;
-import tournament.service.ITournamentService;
 
 public class FXAddPlayerController {
 	@Inject

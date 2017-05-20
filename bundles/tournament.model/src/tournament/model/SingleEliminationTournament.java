@@ -60,6 +60,7 @@ public class SingleEliminationTournament
 	 *
 	 * @throws roundNotFinished exception if round not finished
 	 */
+	@Override
 	public void removeLosers() {
 		removeLosers(players, currentRoundMatchs);
 	}
@@ -87,7 +88,7 @@ public class SingleEliminationTournament
 		});
 	}
 
-	private boolean roundFinished(Collection<Match> currentRoundMatchs) {
+	public boolean roundFinished(Collection<Match> currentRoundMatchs) {
 		for (Match match : currentRoundMatchs) {
 			if (match.getWinner() == null) {
 				return false;

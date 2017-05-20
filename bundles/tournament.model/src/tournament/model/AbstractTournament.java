@@ -17,11 +17,13 @@ public abstract class AbstractTournament {
 
 	public AbstractTournament(List<Player> players) {
 		this.players = players;
-		matchs = new ArrayList();
+		matchs = new ArrayList<>();
 	}
 
 	public abstract Collection<Match> generateMatchs(); //throws *exception*
 
 	public abstract List<Player> getRating();
+
+	public abstract void removeLosers();
 }
 

@@ -1,15 +1,10 @@
 /**
  *
  */
-package tournament.service;
+package tournament.model;
 
 import java.util.Collection;
 import java.util.List;
-
-import tournament.model.AbstractTournament;
-import tournament.model.Match;
-import tournament.model.Player;
-import tournament.model.SetWinnerRequest;
 
 /**
  * @author Vilkova
@@ -29,11 +24,15 @@ public interface ITournamentService {
 
 	void setWinner(SetWinnerRequest setWinnerRequest);
 
+	void removeLosers();
+
 	List<Player> getPlayers();
 
 	List<String> getNamePlayers();
 
 	Collection<Match> getMatchs();
+
+	Player getRating();
 
 	/**
 	 * TODO JavaDoc

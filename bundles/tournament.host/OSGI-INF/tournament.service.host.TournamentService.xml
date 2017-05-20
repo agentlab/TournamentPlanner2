@@ -6,7 +6,7 @@
    <property name="ecf.jaxrs.jersey.server.alias" value="/tournament"/>
    <property name="service.pid" value="tournament.service.host.TournamentService"/>
    <service>
-      <provide interface="tournament.service.ITournamentService"/>
+      <provide interface="tournament.model.ITournamentService"/>
    </service>
    <implementation class="tournament.service.host.TournamentService"/>
 </scr:component>

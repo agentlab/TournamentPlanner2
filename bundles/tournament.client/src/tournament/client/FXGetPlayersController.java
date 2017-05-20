@@ -12,8 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import tournament.model.ITournamentService;
 import tournament.model.Player;
-import tournament.service.ITournamentService;
 
 public class FXGetPlayersController {
 	private ObservableList<Player> playersData = FXCollections.observableArrayList();
