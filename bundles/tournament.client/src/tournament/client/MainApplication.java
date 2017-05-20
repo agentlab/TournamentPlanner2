@@ -21,7 +21,7 @@ public class MainApplication {
         loader.setLocation(resource);
 		try {
 			BorderPane pane = loader.load();
-			Scene s = new Scene(pane, 500, 500);
+			Scene s = new Scene(pane, 700, 700);
 			primaryStage.setScene(s);
 			primaryStage.show();
 		}

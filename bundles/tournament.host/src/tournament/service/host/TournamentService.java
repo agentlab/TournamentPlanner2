@@ -33,7 +33,7 @@ public class TournamentService implements ITournamentService {
 	private AbstractTournament tournament;
 	private List<Player> players = new ArrayList<>();
 	private boolean isRegistrationOpen;
-	private Collection<Match> matchsHistory = new ArrayList<>();
+	private List<Match> matchsHistory = new ArrayList<>();
 
 	@Override
 	public void openRegistration() {
@@ -69,17 +69,25 @@ public class TournamentService implements ITournamentService {
 	@Override
 	public void setWinner(SetWinnerRequest setWinnerRequest) {
 		Player playerWinner = null;
+		Match currentMatch = null;
 		for (int i = 0; i < players.size(); i++) {
 			if (setWinnerRequest.getIdPlayer() == players.get(i).getId()) {
 				playerWinner = players.get(i);
 				break;
 			}
 		}
-		setWinnerRequest.getMatch().setWinner(playerWinner);
+		for (int n = 0; n < matchsHistory.size(); n++) {
+			if (setWinnerRequest.getIdMatch() == matchsHistory.get(n).getId()) {
+				currentMatch = matchsHistory.get(n);
+				break;
+			}
+		}
+		currentMatch.setWinner(playerWinner);
 	}
 
 	@Override
 	public Collection<Match> generateMatchs() {
+
 		Collection<Match> generatedMatchs = getManagedTournament().generateMatchs();
 		matchsHistory.addAll(generatedMatchs);
 		return generatedMatchs;
@@ -113,12 +121,12 @@ public class TournamentService implements ITournamentService {
 
 	@Deactivate
 	public void deactivate(ComponentContext context) {
-		System.out.println("TournamentManager stopped");
+		System.out.println("TournamentManager stopped"); //$NON-NLS-1$
 	}
 
 	@Modified
 	public void modify() {
-		System.out.println("TournamentManager modified");
+		System.out.println("TournamentManager modified"); //$NON-NLS-1$
 	}
 
 }

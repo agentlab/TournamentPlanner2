@@ -12,19 +12,18 @@ component AddPlayer controlledby FXAddPlayerController{
 			Button id addPlayerButton {
 				text : "Add Player",
 				onAction : controllermethod keyPress
-				},
+			},
 			Label {
 				text:"Id"
-				},
+			},
 			TextField id idPlayer,
 			Label {
 				text:"Name"
-				},
+			},
 			TextField id namePlayer,
 			Label {
 				text:"Points"
-				},
+			},
 			TextField id pointsPlayer
-			]
-		}
+		]}
 	}

@@ -84,4 +84,32 @@ public class Match {
 
 		return null;
 	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/**
+	 * @param matchPlayers the matchPlayers to set
+	 */
+	public void setMatchPlayers(List<Player> matchPlayers) {
+		this.matchPlayers = matchPlayers;
+	}
+
+	/**
+	 * @param loser the loser to set
+	 */
+	public void setLoser(Player loser) {
+		this.loser = loser;
+	}
 }

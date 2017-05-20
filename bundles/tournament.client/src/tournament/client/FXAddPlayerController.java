@@ -50,21 +50,4 @@ public class FXAddPlayerController {
 		player.setName(namePlayer.getText());
 		service.addPlayer(player);
 	}
-
-//	@FXML
-//	public void deletekeyPress(ActionEvent event) {
-//		Parent root = null;
-//		try {
-//			root = FXMLLoader.load(getClass().getResource("RemovePlayer.fxml")); //$NON-NLS-1$
-//			Scene scene = new Scene(root);
-//			Stage nStage = new Stage();
-//			nStage.setScene(scene);
-//			nStage.setMaximized(false);
-//			nStage.setTitle("RemovePlayer"); //$NON-NLS-1$
-//			nStage.show();
-//		}
-//		catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
 }

@@ -1,8 +1,12 @@
 package tournament.client
 
-import javafx.scene.layout.BorderPane
+//import javafx.event.*
+import javafx.scene.layout.*
 import javafx.scene.control.Button
 import tournament.client.FXRegistrationController
+import de.fxdiagram.core.XRoot
+import de.fxdiagram.core.XDiagram
+
 
 component Registration controlledby FXRegistrationController{
 	BorderPane {
@@ -17,7 +21,18 @@ component Registration controlledby FXRegistrationController{
 			onAction : controllermethod keyClosePress
 		},
 		left: include tournament.client.AddPlayer,
-		center: include tournament.client.RemovePlayer,
+		center:
+			HBox{
+				children:[
+					include tournament.client.RemovePlayer,
+					XRoot id myroot {
+						//rootDiagram : XDiagram {
+
+//						}
+					}
+				]
+			},
+
 		right: include tournament.client.GetPlayers
 	}
 }

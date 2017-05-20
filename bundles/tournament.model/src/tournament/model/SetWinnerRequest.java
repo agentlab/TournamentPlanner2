@@ -9,7 +9,7 @@ package tournament.model;
  */
 public class SetWinnerRequest {
 	private int idPlayer;
-	private Match match;
+	private int idMatch;
 
 	/**
 	 * @return the player's id
@@ -21,7 +21,21 @@ public class SetWinnerRequest {
 	/**
 	 * @return the match
 	 */
-	public Match getMatch() {
-		return match;
+	public int getIdMatch() {
+		return idMatch;
+	}
+
+	/**
+	 * @param idPlayer the idPlayer to set
+	 */
+	public void setIdPlayer(int idPlayer) {
+		this.idPlayer = idPlayer;
+	}
+
+	/**
+	 * @param idMatch the idMatch to set
+	 */
+	public void setIdMatch(int idMatch) {
+		this.idMatch = idMatch;
 	}
 }

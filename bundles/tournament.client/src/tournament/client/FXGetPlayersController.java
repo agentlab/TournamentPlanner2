@@ -21,8 +21,6 @@ public class FXGetPlayersController {
 	@Inject
 	private ITournamentService service;
 
-
-
 	@FXML
 	TableView<Player> tablePlayers;
 
@@ -45,7 +43,6 @@ public class FXGetPlayersController {
 
 	@FXML
 	void initialize() {
-
 		System.err.println("GetPlayers controller"); //$NON-NLS-1$
 		idColumn.setCellValueFactory(new PropertyValueFactory<Player, Integer>("id")); //$NON-NLS-1$
 		nameColumn.setCellValueFactory(new PropertyValueFactory<Player, String>("name")); //$NON-NLS-1$

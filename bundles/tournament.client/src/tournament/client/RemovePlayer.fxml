@@ -12,7 +12,7 @@
 
 	<children>
 		<ChoiceBox fx:id="playerBox"/> 
-		<Button fx:id="selectPlayerButton" text="Select Player" onAction="#keyPressSelect"/> 
+		<Button fx:id="selectPlayerButton" text="Refresh players" onAction="#keyPressSelect"/> 
 		<Button fx:id="removePlayerButton" text="Remove Player" onAction="#keyPress"/> 
 	</children>
 </VBox>

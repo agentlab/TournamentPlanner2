@@ -10,7 +10,7 @@ component RemovePlayer controlledby FXRemovePlayerController{
 		children : [
 			ChoiceBox<String> id playerBox,
 			Button id selectPlayerButton{
-				text : "Select Player",
+				text : "Refresh players",
 				onAction : controllermethod keyPressSelect
 				},
 			Button id removePlayerButton{

@@ -30,7 +30,21 @@
       <plugin id="ch.qos.logback.core"/>
       <plugin id="ch.qos.logback.slf4j" fragment="true"/>
       <plugin id="com.google.guava"/>
+      <plugin id="com.google.inject"/>
+      <plugin id="com.google.inject.assistedinject" fragment="true"/>
+      <plugin id="com.google.inject.multibindings" fragment="true"/>
       <plugin id="com.ibm.icu"/>
+      <plugin id="de.cau.cs.kieler.core"/>
+      <plugin id="de.cau.cs.kieler.core.kgraph"/>
+      <plugin id="de.cau.cs.kieler.kiml"/>
+      <plugin id="de.cau.cs.kieler.kiml.formats"/>
+      <plugin id="de.cau.cs.kieler.kiml.graphviz.dot"/>
+      <plugin id="de.cau.cs.kieler.kiml.graphviz.layouter"/>
+      <plugin id="de.cau.cs.kieler.kiml.service"/>
+      <plugin id="de.fxdiagram.annotations"/>
+      <plugin id="de.fxdiagram.core"/>
+      <plugin id="de.fxdiagram.external"/>
+      <plugin id="de.fxdiagram.lib"/>
       <plugin id="javassist"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
@@ -39,6 +53,7 @@
       <plugin id="javax.validation.api"/>
       <plugin id="javax.xml"/>
       <plugin id="javax.xml.jre"/>
+      <plugin id="org.antlr.runtime"/>
       <plugin id="org.aopalliance"/>
       <plugin id="org.apache.commons.lang"/>
       <plugin id="org.apache.felix.gogo.command"/>
@@ -48,12 +63,32 @@
       <plugin id="org.eclipse.core.databinding"/>
       <plugin id="org.eclipse.core.databinding.observable"/>
       <plugin id="org.eclipse.core.databinding.property"/>
+      <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.filesystem"/>
+      <plugin id="org.eclipse.core.filesystem.aix.ppc" fragment="true"/>
+      <plugin id="org.eclipse.core.filesystem.aix.ppc64" fragment="true"/>
+      <plugin id="org.eclipse.core.filesystem.hpux.ia64" fragment="true"/>
+      <plugin id="org.eclipse.core.filesystem.linux.ppc" fragment="true"/>
+      <plugin id="org.eclipse.core.filesystem.linux.ppc64" fragment="true"/>
+      <plugin id="org.eclipse.core.filesystem.linux.ppc64le" fragment="true"/>
+      <plugin id="org.eclipse.core.filesystem.linux.x86" fragment="true"/>
+      <plugin id="org.eclipse.core.filesystem.linux.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.core.filesystem.macosx" fragment="true"/>
+      <plugin id="org.eclipse.core.filesystem.win32.x86" fragment="true"/>
+      <plugin id="org.eclipse.core.filesystem.win32.x86_64" fragment="true"/>
       <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.core.resources"/>
+      <plugin id="org.eclipse.core.resources.win32.x86" fragment="true"/>
+      <plugin id="org.eclipse.core.resources.win32.x86_64" fragment="true"/>
       <plugin id="org.eclipse.core.runtime"/>
       <plugin id="org.eclipse.e4.core.contexts"/>
       <plugin id="org.eclipse.e4.core.di"/>
       <plugin id="org.eclipse.e4.core.di.annotations"/>
       <plugin id="org.eclipse.e4.core.services"/>
+      <plugin id="org.eclipse.emf.common"/>
+      <plugin id="org.eclipse.emf.ecore"/>
+      <plugin id="org.eclipse.emf.ecore.xmi"/>
+      <plugin id="org.eclipse.emf.edit"/>
       <plugin id="org.eclipse.equinox.app"/>
       <plugin id="org.eclipse.equinox.cm"/>
       <plugin id="org.eclipse.equinox.common"/>
@@ -103,6 +138,14 @@
       <plugin id="org.eclipse.osgi.compatibility.state" fragment="true"/>
       <plugin id="org.eclipse.osgi.services"/>
       <plugin id="org.eclipse.osgi.util"/>
+      <plugin id="org.eclipse.xtend.lib"/>
+      <plugin id="org.eclipse.xtend.lib.macro"/>
+      <plugin id="org.eclipse.xtext"/>
+      <plugin id="org.eclipse.xtext.common.types"/>
+      <plugin id="org.eclipse.xtext.util"/>
+      <plugin id="org.eclipse.xtext.xbase"/>
+      <plugin id="org.eclipse.xtext.xbase.lib"/>
+      <plugin id="org.objectweb.asm"/>
       <plugin id="org.slf4j.api"/>
       <plugin id="org.slf4j.ext"/>
       <plugin id="org.slf4j.jcl"/>
