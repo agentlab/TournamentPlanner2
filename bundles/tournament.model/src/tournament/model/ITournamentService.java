@@ -24,8 +24,6 @@ public interface ITournamentService {
 
 	void setWinner(SetWinnerRequest setWinnerRequest);
 
-	void removeLosers();
-
 	List<Player> getPlayers();
 
 	List<String> getNamePlayers();

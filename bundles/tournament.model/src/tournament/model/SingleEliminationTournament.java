@@ -114,4 +114,11 @@ public class SingleEliminationTournament
 			return otherPlayer.getPoints() - player.getPoints();
 		}
 	}
+
+	/**
+	 * @return the currentRoundMatchs
+	 */
+	public Collection<Match> getCurrentRoundMatchs() {
+		return currentRoundMatchs;
+	}
 }

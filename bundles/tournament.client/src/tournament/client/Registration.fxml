@@ -4,7 +4,6 @@
 -->
 
 <?import java.lang.*?>
-<?import de.fxdiagram.core.XRoot?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -24,7 +23,6 @@
 		<HBox> 
 			<children>
 				<fx:include source="/tournament/client/RemovePlayer.fxml" />
-				<XRoot fx:id="myroot"/> 
 			</children>
 		</HBox>
 	</center>

@@ -83,6 +83,7 @@ public class TournamentService implements ITournamentService {
 			}
 		}
 		currentMatch.setWinner(playerWinner);
+		getManagedTournament().removeLosers();
 	}
 
 	@Override
@@ -91,12 +92,6 @@ public class TournamentService implements ITournamentService {
 		Collection<Match> generatedMatchs = getManagedTournament().generateMatchs();
 		matchsHistory.addAll(generatedMatchs);
 		return generatedMatchs;
-	}
-
-
-	@Override
-	public void removeLosers(){
-		getManagedTournament().removeLosers();
 	}
 
 	@Override

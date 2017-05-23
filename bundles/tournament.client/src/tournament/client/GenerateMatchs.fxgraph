@@ -1,0 +1,12 @@
+package tournament.client
+
+import javafx.scene.layout.*
+import tournament.client.FXGenerateMatchsController
+import de.fxdiagram.core.XRoot
+import de.fxdiagram.core.XDiagram
+import de.fxdiagram.core.XNode
+
+component GenerateMatchs  controlledby FXGenerateMatchsController{
+	XRoot id matchsroot{
+	}
+}

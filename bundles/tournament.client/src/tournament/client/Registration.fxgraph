@@ -1,6 +1,5 @@
 package tournament.client
 
-//import javafx.event.*
 import javafx.scene.layout.*
 import javafx.scene.control.Button
 import tournament.client.FXRegistrationController
@@ -24,12 +23,8 @@ component Registration controlledby FXRegistrationController{
 		center:
 			HBox{
 				children:[
-					include tournament.client.RemovePlayer,
-					XRoot id myroot {
-						//rootDiagram : XDiagram {
+					include tournament.client.RemovePlayer
 
-//						}
-					}
 				]
 			},
 
