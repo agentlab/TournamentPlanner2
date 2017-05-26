@@ -53,8 +53,9 @@ public class TournamentService implements ITournamentService {
 	}
 
 	@Override
-	public void addPlayer(Player player) {
-		if ((players.size() < MAX_NUMBER_PLAYER) && isRegistrationOpen && (player != null)) {
+	public void addPlayer(String name) {
+		if ((players.size() < MAX_NUMBER_PLAYER) && isRegistrationOpen && (name != null)) {
+			Player player = new Player(name);
 			players.add(player);
 		}
 	}

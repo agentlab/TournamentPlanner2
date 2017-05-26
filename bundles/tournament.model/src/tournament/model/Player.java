@@ -9,19 +9,16 @@ package tournament.model;
  */
 public class Player {
 	private int id;
-	//private static int nextId = 1;
+	private static int nextId = 1;
 	private String name;
 	private int points;
 
-	/*public Player(String name) {
+	public Player(String name) {
 		id = nextId;
 		this.name = name;
 		nextId++;
-	}*/
+	}
 
-	/**
-	 *
-	 */
 	public Player() {
 
 	}
@@ -46,10 +43,10 @@ public class Player {
 		this.points += points;
 	}
 
-	/*@Override
+	@Override
 	public String toString() {
 		return name;
-	}*/
+	}
 
 	/*@Override
 	public boolean equals(Object obj) {

@@ -8,10 +8,6 @@ import tournament.client.FXGetPlayersController
 component GetPlayers controlledby FXGetPlayersController{
 	VBox {
 		children : [
-			Button id getPlayersButton{
-				text : "Get Players",
-				onAction : controllermethod keyPress
-				},
 			TableView id tablePlayers{
 				columns:[
 					TableColumn id idColumn{

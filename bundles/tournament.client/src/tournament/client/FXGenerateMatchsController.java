@@ -7,14 +7,12 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.eclipse.fx.core.di.LocalInstance;
 
 import de.fxdiagram.core.XDiagram;
 import de.fxdiagram.core.XRoot;
 import de.fxdiagram.lib.simple.SimpleNode;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
@@ -33,16 +31,13 @@ public class FXGenerateMatchsController {
 	@FXML
 	XRoot matchsroot;
 
-	FXMLLoader loader;
-
 	public FXGenerateMatchsController() {
 		System.err.println("Creating FXGenerateMatchsController"); //$NON-NLS-1$
 	}
 
 	@PostConstruct
-	void created(IEclipseContext context, @LocalInstance FXMLLoader loader) {
+	void created(IEclipseContext context) {
 		System.err.println("Parent post construction"); //$NON-NLS-1$
-		this.loader = loader;
 	}
 
 	@FXML

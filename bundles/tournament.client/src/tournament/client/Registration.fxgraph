@@ -3,31 +3,24 @@ package tournament.client
 import javafx.scene.layout.*
 import javafx.scene.control.Button
 import tournament.client.FXRegistrationController
-import de.fxdiagram.core.XRoot
-import de.fxdiagram.core.XDiagram
 
-
-component Registration controlledby FXRegistrationController{
-	BorderPane {
-		top:
+component Registartion controlledby FXRegistrationController{
+	VBox{children:[
 			Button id openRegButton {
-			text : "Open registration!",
+			text : "Open Registration",
 			onAction : controllermethod keyPress
 		},
-		bottom:
 			Button id closeRegButton {
 			text : "Close registration!",
 			onAction : controllermethod keyClosePress
 		},
-		left: include tournament.client.AddPlayer,
-		center:
-			HBox{
-				children:[
-					include tournament.client.RemovePlayer
-
-				]
-			},
-
-		right: include tournament.client.GetPlayers
+			Button id addPlayerButton {
+			text : "Add Player",
+			onAction : controllermethod keyaddPress
+		},
+			Button id removePlayerButton {
+			text : "Remove Player",
+			onAction : controllermethod keyremovePress
+		}]
 	}
 }

@@ -47,19 +47,15 @@ public class FXGetPlayersController {
 		idColumn.setCellValueFactory(new PropertyValueFactory<Player, Integer>("id")); //$NON-NLS-1$
 		nameColumn.setCellValueFactory(new PropertyValueFactory<Player, String>("name")); //$NON-NLS-1$
 		pointsColumn.setCellValueFactory(new PropertyValueFactory<Player, Integer>("points")); //$NON-NLS-1$
+		tablePlayers.getItems().clear();
+		initData();
+		tablePlayers.setItems(playersData);
 	}
 
 	private void initData() {
 		for (int i = 0; i < service.getPlayers().size(); i++) {
 			playersData.add(service.getPlayers().get(i));
 		}
-	}
-
-	@FXML
-	public void keyPress() {
-		tablePlayers.getItems().clear();
-		initData();
-		tablePlayers.setItems(playersData);
 	}
 
 }

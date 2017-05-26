@@ -5,28 +5,14 @@
 
 <?import java.lang.*?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="tournament.client.FXRegistrationController">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="tournament.client.FXRegistrationController">
 
-	<top>
-		<Button fx:id="openRegButton" text="Open registration!" onAction="#keyPress"/> 
-	</top>
-	<bottom>
+	<children>
+		<Button fx:id="openRegButton" text="Open Registration" onAction="#keyPress"/> 
 		<Button fx:id="closeRegButton" text="Close registration!" onAction="#keyClosePress"/> 
-	</bottom>
-	<left>
-		<fx:include source="/tournament/client/AddPlayer.fxml" />
-	</left>
-	<center>
-		<HBox> 
-			<children>
-				<fx:include source="/tournament/client/RemovePlayer.fxml" />
-			</children>
-		</HBox>
-	</center>
-	<right>
-		<fx:include source="/tournament/client/GetPlayers.fxml" />
-	</right>
-</BorderPane>
+		<Button fx:id="addPlayerButton" text="Add Player" onAction="#keyaddPress"/> 
+		<Button fx:id="removePlayerButton" text="Remove Player" onAction="#keyremovePress"/> 
+	</children>
+</VBox>

@@ -18,7 +18,7 @@ public interface ITournamentService {
 
 	AbstractTournament getManagedTournament();
 
-	void addPlayer(Player player);
+	void addPlayer(String name);
 
 	void removePlayer(Player player);
 
