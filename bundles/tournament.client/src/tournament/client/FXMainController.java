@@ -9,12 +9,12 @@ import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.fx.core.di.LocalInstance;
 
 import de.fxdiagram.core.XRoot;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import tournament.model.ITournamentService;
 /**
  * @author Vilkova
@@ -30,6 +30,7 @@ public class FXMainController {
 
 	FXMLLoader loader3;
 
+
 	@FXML
 	Button RegButton;
 
@@ -38,6 +39,9 @@ public class FXMainController {
 
 	@FXML
 	Button DrawButton;
+
+	@FXML
+	StackPane acContent;
 
 	public FXMainController() {
 		System.err.println("Creating FXMainController"); //$NON-NLS-1$
@@ -58,64 +62,41 @@ public class FXMainController {
 	}
 
 	@FXML
-	public void keyRegPress() {
+	public void keyRegPress(ActionEvent event) {
 		try {
-			loader.setLocation(getClass().getResource("Registration.fxml")); //$NON-NLS-1$
-
-			VBox regpane = loader.load();
-			Scene scene = new Scene(regpane, 1024, 768);
-
-			Stage nStage = new Stage();
-			nStage.setScene(scene);
-			nStage.setMaximized(false);
-			nStage.setTitle("Registration"); //$NON-NLS-1$
-
-			nStage.show();
+			loader.load(getClass().getResource("Registration.fxml").openStream());
 		}
 		catch (IOException e) {
-			e.printStackTrace();
 		}
+		VBox root = loader.getRoot();
+		acContent.getChildren().clear();
+		acContent.getChildren().add(root);
+
 	}
 
 	@FXML
-	public void keyPlayersPress() {
+	public void keyPlayersPress(ActionEvent event) {
 		try {
-			loader2.setLocation(getClass().getResource("GetPlayers.fxml")); //$NON-NLS-1$
-
-			VBox playerspane = loader2.load();
-			Scene scene = new Scene(playerspane, 300, 450);
-
-			Stage playerStage = new Stage();
-			playerStage.setScene(scene);
-			playerStage.setMaximized(false);
-			playerStage.setTitle("Players"); //$NON-NLS-1$
-
-			playerStage.show();
+			loader2.load(getClass().getResource("GetPlayers.fxml").openStream()); //$NON-NLS-1$
 		}
-		catch (IOException exc) {
-			exc.printStackTrace();
+		catch (IOException e) {
 		}
+		VBox root2 = loader2.getRoot();
+		acContent.getChildren().clear();
+		acContent.getChildren().add(root2);
 	}
 
 	@FXML
-	public void keyDrawPress() {
+	public void keyDrawPress(ActionEvent event) {
 		XRoot matchsroot = new XRoot();
 		try {
-			loader3.setLocation(getClass().getResource("GenerateMatchs.fxml")); //$NON-NLS-1$
-
-			matchsroot = loader3.load();
-			Scene scene = new Scene(matchsroot, 1024, 768);
-
-			Stage playerStage = new Stage();
-			playerStage.setScene(scene);
-			playerStage.setMaximized(false);
-			playerStage.setTitle("Generate Matchs"); //$NON-NLS-1$
-
-			playerStage.show();
+			loader3.load(getClass().getResource("GenerateMatchs.fxml").openStream()); //$NON-NLS-1$
 		}
-		catch (IOException excep) {
-			excep.printStackTrace();
+		catch (IOException e) {
 		}
+		matchsroot = loader3.getRoot();
+		acContent.getChildren().clear();
+		acContent.getChildren().add(matchsroot);
 	}
 }
 

@@ -10,7 +10,7 @@ import org.eclipse.fx.core.di.LocalInstance;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class MainApplication {
@@ -20,7 +20,7 @@ public class MainApplication {
 		URL resource = getClass().getResource("MainView.fxml"); //$NON-NLS-1$
         loader.setLocation(resource);
 		try {
-			VBox pane = loader.load();
+			HBox pane = loader.load();
 			Scene s = new Scene(pane, 700, 700);
 			primaryStage.setScene(s);
 			primaryStage.setTitle("Tournament Planner"); //$NON-NLS-1$

@@ -8,7 +8,8 @@ import de.fxdiagram.core.XDiagram
 
 
 component MainView controlledby FXMainController{
-		VBox{children:[
+		HBox{children:[
+			VBox{children:[
 		Button id RegButton {
 		text : "Registration",
 		onAction : controllermethod keyRegPress
@@ -20,7 +21,8 @@ component MainView controlledby FXMainController{
 		Button id DrawButton {
 		text : "Draw",
 		onAction : controllermethod keyDrawPress
-	}
+	}]},
+		StackPane id acContent
 	]}
 }
 
