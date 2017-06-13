@@ -4,23 +4,25 @@ import javafx.scene.layout.*
 import javafx.scene.control.Button
 import tournament.client.FXRegistrationController
 
-component Registartion controlledby FXRegistrationController{
-	VBox{children:[
+component Registartion controlledby FXRegistrationController {
+	VBox {
+		children : [
 			Button id openRegButton {
-			text : "Open Registration",
-			onAction : controllermethod keyPress
-		},
+				text : "Open Registration",
+				onAction : controllermethod keyPress
+			},
 			Button id closeRegButton {
-			text : "Close registration!",
-			onAction : controllermethod keyClosePress
-		},
+				text : "Close registration!",
+				onAction : controllermethod keyClosePress
+			},
 			Button id addPlayerButton {
-			text : "Add Player",
-			onAction : controllermethod keyaddPress
-		},
+				text : "Add Player",
+				onAction : controllermethod keyaddPress
+			},
 			Button id removePlayerButton {
-			text : "Remove Player",
-			onAction : controllermethod keyremovePress
-		}]
+				text : "Remove Player",
+				onAction : controllermethod keyremovePress
+			}
+		]
 	}
 }

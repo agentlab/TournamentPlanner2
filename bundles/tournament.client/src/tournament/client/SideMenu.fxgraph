@@ -1,0 +1,29 @@
+package tournament.client
+
+import com.jfoenix.controls.JFXListView
+import javafx.scene.control.*
+import javafx.scene.layout.StackPane
+import tournament.client.FXMainController
+
+component SideMenu /*controlledby FXMainController*/ {
+	StackPane {
+		styleClass : [
+			"side-menu"
+		],
+
+		JFXListView id sideList {
+			Label id RegButton {
+				text : "Registration",
+				onMouseClicked : controllermethod keyRegPress
+			},
+			Label id PlayersButton {
+				text : "Players",
+				onMouseClicked : controllermethod keyPlayersPress
+			},
+			Label id DrawButton {
+				text : "Draw",
+				onMouseClicked : controllermethod keyDrawPress
+			}
+		}
+	}
+}

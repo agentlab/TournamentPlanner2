@@ -5,22 +5,22 @@ import javafx.scene.control.*
 import javafx.collections.*
 import tournament.client.FXGetPlayersController
 
-component GetPlayers controlledby FXGetPlayersController{
+component GetPlayers controlledby FXGetPlayersController {
 	VBox {
 		children : [
-			TableView id tablePlayers{
-				columns:[
-					TableColumn id idColumn{
-						text: "Id"
+			TableView id tablePlayers {
+				columns : [
+					TableColumn id idColumn {
+						text : "Id"
 					},
-					TableColumn id nameColumn{
-						text: "Name"
+					TableColumn id nameColumn {
+						text : "Name"
 					},
-					TableColumn id pointsColumn{
-						text: "Points"
+					TableColumn id pointsColumn {
+						text : "Points"
 					}
-					]
-				}
-			]
-		}
+				]
+			}
+		]
 	}
+}

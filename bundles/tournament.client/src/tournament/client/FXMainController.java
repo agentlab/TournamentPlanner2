@@ -1,67 +1,88 @@
 package tournament.client;
 
-import java.io.IOException;
-
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.fx.core.di.LocalInstance;
 
-import de.fxdiagram.core.XRoot;
-import javafx.event.ActionEvent;
+import com.jfoenix.controls.JFXDrawer;
+
+import io.datafx.controller.ViewController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import tournament.model.ITournamentService;
 /**
  * @author Vilkova
  *
  */
+@ViewController(value = "/tournament/client/MainView.fxml", title = "Material Design Example")
 public class FXMainController {
 	@Inject
 	private ITournamentService service;
 
 	FXMLLoader loader;
 
-	FXMLLoader loader2;
+	/*FXMLLoader loader2;
 
-	FXMLLoader loader3;
+	FXMLLoader loader3;*/
 
-
-	@FXML
-	Button RegButton;
 
 	@FXML
-	Button PlayersButton;
+	JFXDrawer acContent;
+
+	/*@FXML
+    private StackPane titleBurgerContainer;
 
 	@FXML
-	Button DrawButton;
+    private JFXHamburger titleBurger;*/
+
+	/*@FXML
+	Label RegButton;
 
 	@FXML
-	StackPane acContent;
+	Label PlayersButton;
+
+	@FXML
+	Label DrawButton;*/
 
 	public FXMainController() {
 		System.err.println("Creating FXMainController"); //$NON-NLS-1$
 	}
 
 	@PostConstruct
-	void created(IEclipseContext context, @LocalInstance FXMLLoader loader, @LocalInstance FXMLLoader loader2, @LocalInstance FXMLLoader loader3) {
+	void created(IEclipseContext context, @LocalInstance FXMLLoader loader/*, @LocalInstance FXMLLoader loader2, @LocalInstance FXMLLoader loader3*/) {
 		System.err.println("Parent post construction"); //$NON-NLS-1$
 		this.loader = loader;
-		this.loader2 = loader2;
-		this.loader3 = loader3;
+		/*this.loader2 = loader2;
+		this.loader3 = loader3;*/
+
+		// init the title hamburger icon
+		/*acContent.setOnDrawerOpening(e -> {
+            final Transition animation = titleBurger.getAnimation();
+            animation.setRate(1);
+            animation.play();
+        });
+		acContent.setOnDrawerClosing(e -> {
+            final Transition animation = titleBurger.getAnimation();
+            animation.setRate(-1);
+            animation.play();
+        });
+        titleBurgerContainer.setOnMouseClicked(e -> {
+            if (acContent.isHidden() || acContent.isHidding()) {
+            	acContent.open();
+            } else {
+            	acContent.close();
+            }
+        });*/
 	}
 
 	@FXML
 	void initialize() {
 		System.err.println("Parent controller"); //$NON-NLS-1$
-
 	}
 
-	@FXML
+	/*@FXML
 	public void keyRegPress(ActionEvent event) {
 		try {
 			loader.load(getClass().getResource("Registration.fxml").openStream());
@@ -71,7 +92,6 @@ public class FXMainController {
 		VBox root = loader.getRoot();
 		acContent.getChildren().clear();
 		acContent.getChildren().add(root);
-
 	}
 
 	@FXML
@@ -97,6 +117,6 @@ public class FXMainController {
 		matchsroot = loader3.getRoot();
 		acContent.getChildren().clear();
 		acContent.getChildren().add(matchsroot);
-	}
+	}*/
 }
 

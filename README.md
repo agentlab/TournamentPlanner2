@@ -1,35 +1,35 @@
 # TournamentPlanner2
-Проект Eclipse e4 планировщика теннисных матчей
+РџСЂРѕРµРєС‚ Eclipse e4 РїР»Р°РЅРёСЂРѕРІС‰РёРєР° С‚РµРЅРЅРёСЃРЅС‹С… РјР°С‚С‡РµР№
 
-## Настройка среды разработки Eclipse IDE
+## РќР°СЃС‚СЂРѕР№РєР° СЃСЂРµРґС‹ СЂР°Р·СЂР°Р±РѕС‚РєРё Eclipse IDE
 
-### Предварительные требования:
+### РџСЂРµРґРІР°СЂРёС‚РµР»СЊРЅС‹Рµ С‚СЂРµР±РѕРІР°РЅРёСЏ:
 
   * JDK 8
   * Maven 3.x
-  * Eclipse Installer, для установки см. [Установка Eclipse Installer](https://github.com/agentlab/ru.agentlab.parent/wiki/Установка-Eclipse-Installer)
+  * Eclipse Installer, РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё СЃРј. [РЈСЃС‚Р°РЅРѕРІРєР° Eclipse Installer](https://github.com/agentlab/ru.agentlab.parent/wiki/РЈСЃС‚Р°РЅРѕРІРєР°-Eclipse-Installer)
 
-### Как настроить кастомную сборку Eclipse IDE для этого проекта с помощью Eclipse Installer
+### РљР°Рє РЅР°СЃС‚СЂРѕРёС‚СЊ РєР°СЃС‚РѕРјРЅСѓСЋ СЃР±РѕСЂРєСѓ Eclipse IDE РґР»СЏ СЌС‚РѕРіРѕ РїСЂРѕРµРєС‚Р° СЃ РїРѕРјРѕС‰СЊСЋ Eclipse Installer
 
-Используйте настройки ниже и следуйте руководству [Настройка Eclipse IDE под проекты с помощью Eclipse Installer](https://github.com/agentlab/ru.agentlab.parent/wiki/Настройка-Eclipse-IDE-под-проекты-с-помощью-Eclipse-Installer)
+РСЃРїРѕР»СЊР·СѓР№С‚Рµ РЅР°СЃС‚СЂРѕР№РєРё РЅРёР¶Рµ Рё СЃР»РµРґСѓР№С‚Рµ СЂСѓРєРѕРІРѕРґСЃС‚РІСѓ [РќР°СЃС‚СЂРѕР№РєР° Eclipse IDE РїРѕРґ РїСЂРѕРµРєС‚С‹ СЃ РїРѕРјРѕС‰СЊСЋ Eclipse Installer](https://github.com/agentlab/ru.agentlab.parent/wiki/РќР°СЃС‚СЂРѕР№РєР°-Eclipse-IDE-РїРѕРґ-РїСЂРѕРµРєС‚С‹-СЃ-РїРѕРјРѕС‰СЊСЋ-Eclipse-Installer)
 
-Настройки для Eclipse Installer
+РќР°СЃС‚СЂРѕР№РєРё РґР»СЏ Eclipse Installer
 
-  * Продукт Eclipse:
+  * РџСЂРѕРґСѓРєС‚ Eclipse:
     * Eclipse IDE for JavaFX with Maven and Tools
-  * Версия продукта:
+  * Р’РµСЂСЃРёСЏ РїСЂРѕРґСѓРєС‚Р°:
     * Neon
 
-  * Проекты (Выделите 4 проекта. Внимание! Нам нужны только эти 4 проекта!):
+  * РџСЂРѕРµРєС‚С‹ (Р’С‹РґРµР»РёС‚Рµ 4 РїСЂРѕРµРєС‚Р°. Р’РЅРёРјР°РЅРёРµ! РќР°Рј РЅСѓР¶РЅС‹ С‚РѕР»СЊРєРѕ СЌС‚Рё 4 РїСЂРѕРµРєС‚Р°!):
     * TournamentPlanner
     * OSGi Eclipse e4 RCP JavaFX Projects
     * OSGi Eclipse e4 RCP Projects
     * OSGi Projects
-  * Версия целевой платформы:
+  * Р’РµСЂСЃРёСЏ С†РµР»РµРІРѕР№ РїР»Р°С‚С„РѕСЂРјС‹:
     * Neon
 
-Все остальное в соответствии с руководством.
+Р’СЃРµ РѕСЃС‚Р°Р»СЊРЅРѕРµ РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ СЂСѓРєРѕРІРѕРґСЃС‚РІРѕРј.
 
-### Запуск программы из Eclipse IDE
+### Р—Р°РїСѓСЃРє РїСЂРѕРіСЂР°РјРјС‹ РёР· Eclipse IDE
 
-1. Запустить в Eclipse на выполнение продукт tournament.client.product.
+1. Р—Р°РїСѓСЃС‚РёС‚СЊ РІ Eclipse РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ РїСЂРѕРґСѓРєС‚ tournament.client.product.

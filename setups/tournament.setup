@@ -80,6 +80,10 @@
       <requirement
           name="de.fxdiagram.sdk.feature.feature.group"/>
       <requirement
+          name="org.eclipse.fx.core.slf4j"/>
+      <requirement
+          name="com.jfoenix.jfoenix"/>
+      <requirement
           name="*"/>
       <sourceLocator
           rootFolder="${tournament.git.clone.location}"
@@ -88,6 +92,8 @@
           name="Neon">
         <repository
             url="http://dl.bintray.com/jankoehnlein/FXDiagram"/>
+        <repository
+            url="http://agentlab.ru/pd/p2/eclipseorbit"/>
       </repositoryList>
     </targlet>
   </setupTask>

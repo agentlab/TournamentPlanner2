@@ -1,53 +1,51 @@
 package tournament.client
 
 import javafx.scene.layout.*
-import javafx.scene.control.Button
+import javafx.scene.control.*
 import tournament.client.FXMainController
 import de.fxdiagram.core.XRoot
 import de.fxdiagram.core.XDiagram
+import com.jfoenix.controls.*
+import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition
 
+component MainView controlledby FXMainController {
+	StackPane {
+		BorderPane {
+			/*top : VBox {
+				spacing : 20,
+				JFXToolbar {
+					leftItems : [
+						JFXRippler {
+							maskType : "CIRCLE",
+							style : "-fx-ripple-color:WHITE;",
+							StackPane id titleBurgerContainer {
+								JFXHamburger id titleBurger {
+									HamburgerBackArrowBasicTransition {
+									}
+								}
+							}
+						},
+						Label {
+							text : "Material Design"
+						}
+					],
+					rightItems : JFXRippler id optionsRippler {
+						maskType : "CIRCLE",
+						style : "-fx-ripple-color:WHITE;",
+						StackPane id optionsBurger {
+							JFXHamburger {
+								styleClass : "jfx-options-burger"
+							}
+						}
+					}
+				}
+			},*/
 
-component MainView controlledby FXMainController{
-		HBox{children:[
-			VBox{children:[
-		Button id RegButton {
-		text : "Registration",
-		onAction : controllermethod keyRegPress
-	},
-		Button id PlayersButton {
-		text : "Players",
-		onAction : controllermethod keyPlayersPress
-	},
-		Button id DrawButton {
-		text : "Draw",
-		onAction : controllermethod keyDrawPress
-	}]},
-		StackPane id acContent
-	]}
+			center : JFXDrawer id acContent {
+				defaultDrawerSize : 250,
+				direction : "LEFT",
+				styleClass : "body"
+			}
+		}
+	}
 }
-
-
-
-
-//	BorderPane {
-//		top:
-//			Button id openRegButton {
-//			text : "Registration",
-//			onAction : controllermethod keyPress
-//		},
-//		bottom:
-//			Button id closeRegButton {
-//			text : "Close registration!",
-//			onAction : controllermethod keyClosePress
-//		},
-//		left: include tournament.client.AddPlayer,
-//		center:
-//			HBox{
-//				children:[
-//					include tournament.client.RemovePlayer
-//
-//				]
-//			},
-//
-//		right: include tournament.client.GetPlayers
-//	}

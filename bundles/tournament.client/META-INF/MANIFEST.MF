@@ -4,11 +4,19 @@ Bundle-Name: Client
 Bundle-SymbolicName: tournament.client;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Import-Package: de.fxdiagram.core,
+Import-Package: com.jfoenix.controls,
+ com.jfoenix.controls.events,
+ com.jfoenix.transitions.hamburger,
+ de.fxdiagram.core,
  de.fxdiagram.lib.buttons,
  de.fxdiagram.lib.simple,
+ io.datafx.controller,
+ io.datafx.controller.context,
+ io.datafx.controller.flow,
+ io.datafx.controller.flow.container,
+ io.datafx.controller.flow.context,
  org.eclipse.e4.core.contexts,
- org.eclipse.xtext.xbase.lib;version="2.11.0",
+ org.eclipse.xtext.xbase.lib,
  org.osgi.service.component.annotations;version="[1.2.0,2.0.0)",
  tournament.model
 Bundle-ActivationPolicy: lazy

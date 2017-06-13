@@ -16,7 +16,6 @@
    </launcherArgs>
 
    <launcher>
-      <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
@@ -50,7 +49,6 @@
       <plugin id="javax.inject"/>
       <plugin id="javax.persistence"/>
       <plugin id="javax.validation"/>
-      <plugin id="javax.validation.api"/>
       <plugin id="javax.xml"/>
       <plugin id="javax.xml.jre"/>
       <plugin id="org.antlr.runtime"/>
@@ -147,14 +145,12 @@
       <plugin id="org.eclipse.xtext.xbase.lib"/>
       <plugin id="org.objectweb.asm"/>
       <plugin id="org.slf4j.api"/>
-      <plugin id="org.slf4j.ext"/>
-      <plugin id="org.slf4j.jcl"/>
-      <plugin id="org.slf4j.jul"/>
-      <plugin id="org.slf4j.log4j"/>
+      <plugin id="org.slf4j.apis.jcl"/>
+      <plugin id="org.slf4j.apis.log4j"/>
+      <plugin id="org.slf4j.bridge.jul"/>
       <plugin id="org.tukaani.xz"/>
       <plugin id="tournament.client"/>
       <plugin id="tournament.model"/>
-      <plugin id="tournament.service"/>
       <plugin id="tournament.service.host"/>
    </plugins>
 
@@ -164,6 +160,7 @@
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.osgi" autoStart="true" startLevel="-1" />
    </configurations>
 
 </product>
