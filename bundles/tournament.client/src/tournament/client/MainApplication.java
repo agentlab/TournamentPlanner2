@@ -32,7 +32,7 @@ public class MainApplication {
 			//JFXDecorator pane = new JFXDecorator(stage, container.getView());
 			//pane.setCustomMaximize(true);
 
-			URL resource = getClass().getResource("MainView.fxml"); //$NON-NLS-1$
+			URL resource = getClass().getResource("/tournament/client/MainView.fxml"); //$NON-NLS-1$
 	        loader.setLocation(resource);
 	        StackPane pane = loader.load();
 

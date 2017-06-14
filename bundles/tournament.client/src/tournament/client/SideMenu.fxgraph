@@ -4,8 +4,9 @@ import com.jfoenix.controls.JFXListView
 import javafx.scene.control.*
 import javafx.scene.layout.StackPane
 import tournament.client.FXMainController
+import tournament.client.SideMenuController
 
-component SideMenu /*controlledby FXMainController*/ {
+component SideMenu controlledby SideMenuController {
 	StackPane {
 		styleClass : [
 			"side-menu"

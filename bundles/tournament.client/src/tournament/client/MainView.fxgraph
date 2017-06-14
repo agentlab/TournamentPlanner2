@@ -11,7 +11,7 @@ import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition
 component MainView controlledby FXMainController {
 	StackPane {
 		BorderPane {
-			/*top : VBox {
+			top : VBox {
 				spacing : 20,
 				JFXToolbar {
 					leftItems : [
@@ -39,7 +39,7 @@ component MainView controlledby FXMainController {
 						}
 					}
 				}
-			},*/
+			},
 
 			center : JFXDrawer id acContent {
 				defaultDrawerSize : 250,

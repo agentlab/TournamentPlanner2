@@ -9,6 +9,7 @@ import javax.inject.Inject;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
 
+import io.datafx.controller.ViewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -18,6 +19,7 @@ import javafx.scene.control.TextInputDialog;
 import tournament.model.ITournamentService;
 import tournament.model.Player;
 
+@ViewController(value = "/tournament/client/Registration.fxml", title = "Material Design Example")
 public class FXRegistrationController {
 	@Inject
 	private ITournamentService service;
